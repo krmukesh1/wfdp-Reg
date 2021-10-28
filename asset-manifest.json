@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/krmukesh1/wfdp-Reg/static/css/main.9720c381.chunk.css",
+    "main.js": "/krmukesh1/wfdp-Reg/static/js/main.62420662.chunk.js",
+    "main.js.map": "/krmukesh1/wfdp-Reg/static/js/main.62420662.chunk.js.map",
+    "runtime-main.js": "/krmukesh1/wfdp-Reg/static/js/runtime-main.2dd85fbc.js",
+    "runtime-main.js.map": "/krmukesh1/wfdp-Reg/static/js/runtime-main.2dd85fbc.js.map",
+    "static/js/2.7aa54a75.chunk.js": "/krmukesh1/wfdp-Reg/static/js/2.7aa54a75.chunk.js",
+    "static/js/2.7aa54a75.chunk.js.map": "/krmukesh1/wfdp-Reg/static/js/2.7aa54a75.chunk.js.map",
+    "index.html": "/krmukesh1/wfdp-Reg/index.html",
+    "static/css/main.9720c381.chunk.css.map": "/krmukesh1/wfdp-Reg/static/css/main.9720c381.chunk.css.map",
+    "static/js/2.7aa54a75.chunk.js.LICENSE.txt": "/krmukesh1/wfdp-Reg/static/js/2.7aa54a75.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2dd85fbc.js",
+    "static/js/2.7aa54a75.chunk.js",
+    "static/css/main.9720c381.chunk.css",
+    "static/js/main.62420662.chunk.js"
+  ]
+}
