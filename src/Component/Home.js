@@ -1,7 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Form.css";
 import logo from "./images/WFDP.png";
 const Home = () => {
+  // store input data
+  const [user, setUser] = useState({
+    type: "",
+    surname: "",
+    gname: "",
+    nationality: "",
+    dbirth: "",
+    dissue: "",
+    code: "",
+    sex: "",
+    organisation: "",
+    title: "",
+    pbirth: "",
+    dexpiary: "",
+  });
+  let name, value;
+  const handleInputs = (e) => {
+    console.log("hi");
+    name = e.target.name;
+    value = e.target.value;
+    setUser({ ...user, [name]: value });
+  };
+  const formSubmit = (e) => {
+    e.preventDefault();
+    alert(
+      `${user.type} ${user.surname} ${user.gname} ${user.nationality}${user.dbirth} ${user.dissue} ${user.code} ${user.sex}${user.organisation} ${user.title} ${user.pbirth} ${user.dexpiary}
+      `
+    );
+    setUser("");
+  };
+  // image upload
   const imageUploader = React.useRef();
   const imageSubmit = (event) => {
     event.preventDefault();
@@ -30,43 +61,75 @@ const Home = () => {
       </nav>
       <div className="container">
         <div className="row">
-          <form>
+          <form onSubmit={formSubmit}>
             <div className="col-md-6 ">
               <div className="home-form-control">
                 <label for="type">Type/type:</label>
-                <input type="text" />
+                <input
+                  type="text"
+                  value={user.type}
+                  onChange={handleInputs}
+                  name="type"
+                  id="type"
+                />
               </div>
               <div className="home-form-control">
                 <label for="type">Surname:</label>
-                <input type="text" />
+                <input
+                  type="text"
+                  value={user.surname}
+                  onChange={handleInputs}
+                  name="surname"
+                  id="surname"
+                />
               </div>
               <div className="home-form-control">
                 <label for="type">Given Name:</label>
-                <input type="text" />
+                <input
+                  type="text"
+                  value={user.gname}
+                  onChange={handleInputs}
+                  name="gname"
+                  id="gname"
+                />
               </div>
               <div className="home-form-control">
                 <label for="type">Nationality:</label>
-                <input type="text" />
+                <input
+                  type="text"
+                  value={user.nationality}
+                  onChange={handleInputs}
+                  name="nationality"
+                  id="nationality"
+                />
               </div>
               <div className="home-form-control">
                 <label for="type">Date of Birth:</label>
-                <input type="text" />
+                <input
+                  type="text"
+                  value={user.dbirth}
+                  onChange={handleInputs}
+                  name="dbirth"
+                  id="dbirth"
+                />
               </div>
 
               <div className="home-form-control">
                 <label for="type">date of issue:</label>
-                <input type="text" />
+                <input
+                  type="text"
+                  value={user.dissue}
+                  onChange={handleInputs}
+                  name="dissue"
+                  id="dissue"
+                />
               </div>
 
               <div className="Signature">
                 <h2>Holder's Signature:</h2>
 
                 <div className="avatar">
-                  <img
-                    key={Date.now()}
-                    src={"https://bloomia.herokuapp.com/" + Image}
-                    alt="avatar"
-                  />
+                  <img key={Date.now()} src={"" + Image} alt="avatar" />
                 </div>
               </div>
               <div className="image-input">
@@ -86,39 +149,71 @@ const Home = () => {
             </div>
             <div className="col-md-6 ">
               <div className="home-form-control">
-                <label for="type">code:</label>
-                <input type="text" />
+                <label for="type">Code:</label>
+                <input
+                  type="text"
+                  value={user.code}
+                  onChange={handleInputs}
+                  name="code"
+                  id="code"
+                />
               </div>
               <div className="home-form-control">
                 <label for="type">Sex:</label>
-                <input type="text" />
+                <input
+                  type="text"
+                  value={user.sex}
+                  onChange={handleInputs}
+                  name="sex"
+                  id="sex"
+                />
               </div>
 
               <div className="home-form-control">
                 <label for="type">organisation:</label>
-                <input type="text" />
+                <input
+                  type="text"
+                  value={user.organisation}
+                  onChange={handleInputs}
+                  name="organisation"
+                  id="organisation"
+                />
               </div>
               <div className="home-form-control">
                 <label for="type">Title:</label>
-                <input type="text" />
+                <input
+                  type="text"
+                  value={user.title}
+                  onChange={handleInputs}
+                  name="title"
+                  id="title"
+                />
               </div>
               <div className="home-form-control">
                 <label for="type">Place of Birth:</label>
-                <input type="text" />
+                <input
+                  type="text"
+                  value={user.pbirth}
+                  onChange={handleInputs}
+                  name="pbirth"
+                  id="pbirth"
+                />
               </div>
               <div className="home-form-control">
                 <label for="type">date of expiry:</label>
-                <input type="text" />
+                <input
+                  type="text"
+                  value={user.dexpiary}
+                  onChange={handleInputs}
+                  name="dexpiary"
+                  id="dexpiary"
+                />
               </div>
               <div className="image">
                 <h2>Image</h2>
 
                 <div className="avatar">
-                  <img
-                    key={Date.now()}
-                    src={"https://bloomia.herokuapp.com/" + Image}
-                    alt="avatar"
-                  />
+                  <img key={Date.now()} src={"" + Image} alt="avatar" />
                 </div>
               </div>
               <div className="image-input">
@@ -135,7 +230,9 @@ const Home = () => {
                   Upload Image
                 </p>
               </div>
-              <button className="btn btn-secondary">Submit</button>
+              <button type="submit" className="btn btn-secondary">
+                Submit
+              </button>
             </div>
           </form>
         </div>
