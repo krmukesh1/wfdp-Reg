@@ -1,13 +1,13 @@
 import React from "react";
 import "./Form.css";
-
+import logo from "./images/WFDP.png";
 const Form = () => {
   return (
     <>
       <nav>
         <div className="logo">
           <a href="#">
-            <img src="./images/WFDP.png" alt="" />
+            <img src={logo} alt="logo" />
           </a>
         </div>
         <div className="ml-auto">

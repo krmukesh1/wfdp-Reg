@@ -87,7 +87,7 @@ input::placeholder {
 .home-form-control {
   border: 1px solid blue;
   padding: 20px 40px;
-  margin: 10px 0;
+  margin: 20px 20px;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
@@ -95,8 +95,47 @@ input::placeholder {
 }
 .home-form-control input {
   border: 0;
-  width: 40rem;
+  width: 38rem;
   font-size: 24px;
+}
+form {
+  display: flex;
+}
+.image,
+.Signature {
+  padding: 20px 40px;
+  margin: 20px 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.image-input {
+  padding: 30px 40px;
+  margin: 20px 20px;
+  border: 1px solid blue;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  background: blue;
+  color: #fff;
+}
+.image-input p {
+  font-size: 30px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+button.btn.btn-secondary {
+  font-size: 30px;
+  padding: 30px 79px;
+  border-radius: 20px;
+  color: #fff;
+  background: blue;
+  margin: 23px -115px;
+  text-transform: uppercase;
 }
 @media (max-width: 1600px) {
   input {
@@ -146,5 +185,40 @@ input::placeholder {
     border: 0;
     width: 11rem;
     font-size: 16px;
+  }
+  form {
+    display: block;
+  }
+  .home-form-control input {
+    border: 0;
+    width: 11rem;
+    font-size: 24px;
+  }
+  .home-form-control {
+    border: 1px solid blue;
+    padding: 20px 15px;
+    margin: 20px 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .image-input p {
+    font-size: 26px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .image-input {
+    padding: 30px 20px;
+    margin: 20px 10px;
+  }
+  button.btn.btn-secondary {
+    font-size: 30px;
+    padding: 30px 80px;
+    border-radius: 20px;
+    color: #fff;
+    background: blue;
+    margin: 23px 31px;
+    text-transform: uppercase;
   }
 }
