@@ -40,34 +40,54 @@ const Home = () => {
       pbirth,
       dexpiary,
     } = user;
-    const res = await fetch(
-      "https://react-from-2b7ed-default-rtdb.firebaseio.com/ziasyform.json",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          type,
-          surname,
-          gname,
-          nationality,
-          dbirth,
-          dissue,
-          code,
-          sex,
-          organisation,
-          title,
-          pbirth,
-          dexpiary,
-        }),
+    if (type && surname && gname && nationality) {
+      const res = await fetch(
+        "https://react-from-2b7ed-default-rtdb.firebaseio.com/ziasyform.json",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            type,
+            surname,
+            gname,
+            nationality,
+            dbirth,
+            dissue,
+            code,
+            sex,
+            organisation,
+            title,
+            pbirth,
+            dexpiary,
+          }),
+        }
+      );
+      // alert(
+      //   `${user.type} ${user.surname} ${user.gname} ${user.nationality}${user.dbirth} ${user.dissue} ${user.code} ${user.sex}${user.organisation} ${user.title} ${user.pbirth} ${user.dexpiary}
+      //   `
+      // );
+      if (res) {
+        setUser({
+          type: "",
+          surname: "",
+          gname: "",
+          nationality: "",
+          dbirth: "",
+          dissue: "",
+          code: "",
+          sex: "",
+          organisation: "",
+          title: "",
+          pbirth: "",
+          dexpiary: "",
+        });
+        alert("Data Stored Succesfully");
       }
-    );
-    alert(
-      `${user.type} ${user.surname} ${user.gname} ${user.nationality}${user.dbirth} ${user.dissue} ${user.code} ${user.sex}${user.organisation} ${user.title} ${user.pbirth} ${user.dexpiary}
-      `
-    );
-    setUser("");
+    } else {
+      alert("Plz Fill all the Data");
+    }
   };
   // image upload
   const imageUploader = React.useRef();
