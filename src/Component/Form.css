@@ -136,6 +136,7 @@ button.btn.btn-secondary {
   background: blue;
   margin: 23px -115px;
   text-transform: uppercase;
+  cursor: pointer;
 }
 @media (max-width: 1600px) {
   input {

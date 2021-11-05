@@ -24,8 +24,45 @@ const Home = () => {
     value = e.target.value;
     setUser({ ...user, [name]: value });
   };
-  const formSubmit = (e) => {
+  const formSubmit = async (e) => {
     e.preventDefault();
+    const {
+      type,
+      surname,
+      gname,
+      nationality,
+      dbirth,
+      dissue,
+      code,
+      sex,
+      organisation,
+      title,
+      pbirth,
+      dexpiary,
+    } = user;
+    const res = await fetch(
+      "https://react-from-2b7ed-default-rtdb.firebaseio.com/ziasyform.json",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          type,
+          surname,
+          gname,
+          nationality,
+          dbirth,
+          dissue,
+          code,
+          sex,
+          organisation,
+          title,
+          pbirth,
+          dexpiary,
+        }),
+      }
+    );
     alert(
       `${user.type} ${user.surname} ${user.gname} ${user.nationality}${user.dbirth} ${user.dissue} ${user.code} ${user.sex}${user.organisation} ${user.title} ${user.pbirth} ${user.dexpiary}
       `
@@ -61,7 +98,7 @@ const Home = () => {
       </nav>
       <div className="container">
         <div className="row">
-          <form onSubmit={formSubmit}>
+          <form onSubmit={formSubmit} method="POST">
             <div className="col-md-6 ">
               <div className="home-form-control">
                 <label for="type">Type/type:</label>
